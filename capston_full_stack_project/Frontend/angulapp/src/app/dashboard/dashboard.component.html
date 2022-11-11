@@ -1,0 +1,95 @@
+<div class="container p-3 my-4">
+  <h1>Welcome to Admin Dashboard</h1>
+  <input type="button"  value="logout" (click)="onLogout()">
+</div>
+
+
+<div class="container p-3 my-4">
+  <div class="col-6 mx-auto">
+   <div class="card">
+       <div class="col-2 pl-5">
+           &nbsp;&nbsp; <a routerLink="../" class="pt-3 btn btn-transparent-light"><i class="fi fi-rr-arrow-small-left" style="font-size:30px"></i></a>
+       </div>
+     <div class="card-body p-5 pt-1">
+       <h3 class="mb-4">Add New Product</h3>
+       <form [formGroup]="productRef" (ngSubmit)="storeProduct()">
+       <!-- <form action="index.html"> -->
+         <div class="form-floating mb-3">
+           <input  #_id class="form-control" id="pid" type="text" formControlName="_id"  required >
+           <label for="pname">Product ID</label>
+         </div>
+         <div class="form-floating mb-3">
+           <input  #name class="form-control" id="pname" type="text" formControlName="name"  required>
+           <label for="pdescription">Product Description</label>
+         </div>
+         <div class="form-floating mb-3">
+           <input #price class="form-control" id="price" type="text" formControlName="price" placeholder="150" required>
+           <label for="price">Price</label>
+         </div>
+         <div class="form-group d-flex justify-content-end">
+           <button type="submit" class="btn btn-lighten" id="addProduct"z name="addProduct" >Add Product</button>
+         </div>
+        </form>
+     </div>
+   </div>
+ </div>
+</div>
+<div>
+  {{msg}}
+  <hr/>
+
+  <div class="container p-3 my-4">
+    <h1>Products in shop</h1>
+  <table class="table table-striped table-hover" border="1">
+      <thead><tr>
+          <th scope="col">PId</th>
+          <th scope="col">PName</th>
+          <th scope="col">Price</th>
+          <th scope="col">Delete</th>
+          <th scope="col">Update</th>
+      </tr></thead>
+      <tbody>
+      <tr *ngFor="let p of products" scope="row">
+              <td>{{p._id}}</td>
+              <td>{{p.name}}</td>
+              <td>{{p.price}}</td>
+              <td><input type="button" value="Delete" (click)="deleteRec(p._id)"/></td>
+              <td><input type="button" value="Update" (click)="updateProduct(p._id)"/></td>
+      </tr></tbody>
+  </table>
+  <br/><hr>
+  {{deleteMsg}}
+  <hr>
+  <div *ngIf="flag">
+    <label>PID</label>
+    <input type="text" [(ngModel)]="pid1" readonly/>
+    <label>Price</label>
+    <input type="text" [(ngModel)]="price1"/>
+    <input type="button" value="update record" (click)="updateRecordInfo()">
+    </div>
+    {{updatedResult}}
+</div>
+</div>
+
+
+<hr>
+<!-- Code for all users in database -->
+<div class="container p-3 my-4">
+  <h1> Users in Shop</h1>
+  <table class="table table-striped table-hover" border="1">
+      <thead><tr>
+          <th scope="col">PId</th>
+          <th scope="col">PName</th>
+          <th scope="col">Address</th>
+          <th scope="col">Delete</th>
+      </tr></thead>
+      <tbody>
+      <tr *ngFor="let u of users" scope="row">
+        <td>{{u._id}}</td>
+        <td>{{u.name}}</td>
+              <td>{{u.email}}</td>
+              <td>{{u.address}}</td>
+              <td><input type="button" value="Delete" (click)="deleteUser(u._id)"/></td>
+      </tr></tbody>
+  </table>
+</div>

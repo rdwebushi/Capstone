@@ -1,0 +1,51 @@
+
+
+
+<div class="container p-3 my-4">
+  <div class="row justify-content-center mt-5">
+    <!-- Right side of page (picture) -->
+       <div class="col-lg-12 col-xl-12 text-center align-self-center">
+          <h1 class="mb-4">The WatchShop.com</h1>
+          <p class="lead text-muted">is for affordable and latest Watches..</p>
+          <!-- <p class="lead text-muted">Let's Take a look</p>            -->
+          <button href="#prod" class="btn btn-darken" type="button">Let's take a look</button>
+
+      </div>
+      <div class="col-lg-6 col-xl-6 text-center text-lighten">
+          <img class="img-fluid mb-4" width="fi-rr-plus-small" src="../../../assets/image-gallery.png" alt="" style="transform: rotate(4deg)">
+      </div>
+  </div>
+</div>
+
+
+
+<div id="prod" class="container p-3">
+  <div class="card col-12 p-5 my-4 mx-auto">
+       <!-- Add New Product button -->
+
+      <!-- Product List -->
+      <div *ngFor="let product of products" class="col-12 px-5 my-2">
+          <div  class="row justify-content-center align-items-center">
+              <div class="col-2 p-0 ">
+                  <img class='mx-auto card-img-top' src="https://i.imgur.com/pjITBzX.jpg" width="auto" height="auto" />
+              </div>
+              <div class="col-4 align-items-center">
+                  <h2 class="card-title font-weight-bold">{{product._id}}</h2>
+                  <p class="card-text pt-1">{{product.name}}</p>
+                  <p class="card-text pt-2">{{product.price}}$</p>
+              </div>
+              <!-- <div class="col-4 align-items-center d-flex justify-content-end">
+                  <a routerLink="edit-product/{{product._id}}" routerLinkActive="active" class="pt-3 btn btn-transparent"><i class="fi fi-rr-edit" style="font-size:25px">delete</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a (click)="deleteProduct(product._id)" class="pt-3 btn btn-transparent"><i class="fi fi-rr-trash" style="font-size:25px"></i></a>
+              </div>
+              <div class="col-3 align-items-center d-flex justify-content-end">
+                <a routerLink="edit-product/{{product._id}}" routerLinkActive="active" class="pt-3 btn btn-transparent"><i class="fi fi-rr-edit" style="font-size:25px">addToCart</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a (click)="deleteProduct(product._id)" class="pt-3 btn btn-transparent"><i class="fi fi-rr-trash" style="font-size:25px"></i></a>
+            </div> -->
+          </div>
+          <hr>
+      </div>
+  </div>
+</div>
+
+
