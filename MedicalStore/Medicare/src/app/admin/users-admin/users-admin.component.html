@@ -1,0 +1,32 @@
+<div class="container p-3">
+    <div class="card col-10 p-5 my-4 mx-auto">
+        <!-- Add New User button -->
+        <div class="row pb-5">
+            <div class="d-flex justify-content-end">
+                <a routerLink="new-user" routerLinkActive="active" class="btn btn-darken">Add New User <i class="fi fi-rr-user-add" style="font-size:20px"></i></a>
+            </div>
+        </div>  
+        <!-- Users List -->
+        <div *ngFor="let user of users" class="row m-2 my-2 justify-content-center align-items-center">
+            <div class="col-2 p-0">
+                <div class="rounded-circle bg-lighten d-flex justify-content-center align-items-center" style="width:100px;height:100px" >
+                    <i class="fi fi-rr-user" style="font-size:35px"></i>
+                </div>
+            </div>
+            <div class="col-4 align-items-center">
+                <h2 class="card-title font-weight-bold">{{user.name}}</h2>
+                <p class="card-text">{{user.email}}</p>
+            </div>
+            <div class="col-4 align-items-center d-flex justify-content-end">
+                <a routerLink="./edit-user/{{user._id}}" routerLinkActive="active"class="pt-3 btn btn-transparent"><i class="fi fi-rr-edit"
+                        style="font-size:25px"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a (click)="deleteUser(user._id)" class="pt-3 btn btn-transparent" ><i class="fi fi-rr-trash" style="font-size:25px"></i></a>
+
+                <!-- <a (click)="deleteUser(user._id)" class="pt-3 btn btn-transparent" ><i class="fi fi-rr-user-remove" style=" font-size:25px"></i></a> -->
+            </div>
+        </div>
+        <hr>
+       
+    </div>
+</div>
+

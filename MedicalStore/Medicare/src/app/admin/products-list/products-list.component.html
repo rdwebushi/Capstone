@@ -1,0 +1,30 @@
+<div class="container p-3">
+    <div class="card col-12 p-5 my-4 mx-auto">
+         <!-- Add New Product button -->
+         <div class="row pb-5">
+            <div class="d-flex justify-content-end">
+            <a routerLink="new-product" routerLinkActive="active" class="btn btn-darken">Add New Product <i class="fi fi-rr-plus-small" style="font-size:25px"></i>
+            </a>
+           </div>
+        </div>
+        <!-- Product List -->
+        <div *ngFor="let product of products" class="col-12 px-5 my-2">
+            <div  class="row justify-content-center align-items-center">
+                <div class="col-2 p-0 ">
+                    <img class='mx-auto card-img-top' src="{{product.image}}" width="auto" height="auto" />
+                </div>
+                <div class="col-4 align-items-center">
+                    <h2 class="card-title font-weight-bold">{{product.name}}</h2>
+                    <p class="card-text pt-1">{{product.description}}</p>
+                    <p class="card-text pt-2">{{product.price}}$</p>
+                </div>
+                <div class="col-4 align-items-center d-flex justify-content-end">
+                    <a routerLink="edit-product/{{product._id}}" routerLinkActive="active" class="pt-3 btn btn-transparent"><i class="fi fi-rr-edit" style="font-size:25px"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a (click)="deleteProduct(product._id)" class="pt-3 btn btn-transparent"><i class="fi fi-rr-trash" style="font-size:25px"></i></a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+<!-- <router-outlet></router-outlet> -->

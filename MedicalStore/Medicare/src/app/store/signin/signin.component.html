@@ -1,0 +1,74 @@
+<div class="container p-3 my-4">
+          <div class="row justify-content-center">
+              <!-- login -->
+            <div class="col-lg-6 " *ngIf="userlogin">
+              <div class="card">
+                <div class="card-body p-lg-5">
+                  <h3 class="mb-4">Hi, welcome back! 👋👋</h3>
+                  <p class="text-muted text-sm mb-5"></p>
+                  <!-- <form id="loginForm" action="index.html"> -->
+                    <div class="form-floating mb-3">
+                      <input #emailR class="form-control" id="floatingInput" type="email" placeholder="name@example.com" required>
+                      <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input #passwordR class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
+                      <label for="floatingPassword">Password</label>
+                    </div>
+                    <!-- <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                      <label class="form-check-label" for="remember">Remember me</label>
+                    </div> -->
+                    <button (click)="login(emailR.value, passwordR.value)" class="btn btn-darken" type="button">Login</button>
+                    <br>
+                    <span style="color: red;">{{message}}</span>
+                  <!-- </form> -->
+                </div>
+                <div class="card-footer bg-transparent px-lg-5 py-lg-4">
+                  <div class="text-sm text-muted">Don't have an account? <a (click)="user_register()" class="reset-a" style="cursor: pointer;">Register</a>.</div>
+                </div>
+              </div>
+            </div>
+            <!-- register -->
+             <div class="col-lg-6 " *ngIf="userregister">
+              <div class="card">
+                <div class="card-body p-lg-5">
+                  <h3 class="mb-4">The Medical store</h3>
+                  <p class="text-muted text-sm mb-5">for Fast, Affordable generic medicines..</p>
+                  <!-- <form action="index.html"> -->
+                    <div class="form-floating mb-3">
+                      <input #name class="form-control" id="fullname" type="text" placeholder="Jasseca Andrew" required>
+                      <label for="fullname">Full Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input #email class="form-control" id="floatingInput" type="email" placeholder="name@example.com" required>
+                      <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input #password class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
+                      <label for="floatingPassword">Password</label>
+                    </div>
+                    <!-- <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" name="agree" id="agree">
+                      <label class="form-check-label" for="agree">I agree with the <a href="#">Terms & Conditions</a>.</label>
+                    </div> -->
+                    <div class="form-group">
+                      <button (click)="signup(name.value, email.value, password.value)" class="btn btn-lighten" id="regidter" type="button" name="registerSubmit" >Register</button>
+                    </div>
+                    <br>
+                    <span style="color: red;">{{message}}</span>
+                  <!-- </form> -->
+                </div>
+                <div class="card-footer bg-transparent px-lg-5 py-lg-4">
+                  <div class="text-sm text-muted">Already have an account? <a (click)="user_login()" class="reset-a" style="cursor: pointer;">Login</a>.</div>
+                </div>
+              </div>
+            </div>
+            <!-- Right side of page (picture) -->
+           <div class="col-lg-6 col-xl-5 text-center text-lighten"><img class="img-fluid mb-4" width="350" src="../../../assets/medicart.png" alt="" style="transform: rotate(4deg)">
+              <h1 class="mb-4">The Medical store </h1>
+              <p class="lead text-muted">for Fast, Affordable generic medicines..</p>
+            </div>
+          </div>
+
+</div>

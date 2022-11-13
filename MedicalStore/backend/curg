@@ -1,0 +1,143 @@
+// /**
+//  * GET /product
+//  * Purpose: get all products
+//  */
+// app.get("/product", (req, res) => {
+//   Product.find({}, (err, doc) => {
+//     if (!err) {
+//       res.send(doc);
+//     } else {
+//       res.send(err);
+//     }
+//   });
+// });
+// /**
+//  * GET /product
+//  * Purpose: get product by id
+//  */
+//  app.get("/product/:id", (req, res) => {
+//     Product.find({ _id: req.params.id },   (err, doc) => {
+//       if (!err) {
+//         res.send(doc);
+//       } else {
+//         res.send(err);
+//       }
+//     });
+//   });
+// /**
+//  * POST /product
+//  * Purpose: add new product
+//  */
+// app.post("/product", (req, res) => {
+//   // get data from request
+//   let product_name = req.body.name;
+//   let product_desc = req.body.description;
+//   let product_price = req.body.price;
+//   // set data to schema
+//   let newProduct = new Product({
+//     name: product_name,
+//     description: product_desc,
+//     price: product_price,
+//   });
+//   // save data to db
+//   newProduct.save((err, result) => {
+//     if (!err) {
+//       res.send(result);
+//     } else {
+//       res.send(err);
+//     }
+//   });
+// });
+// /**
+//  * PATCH /lists/:id
+//  * Purpose: Update a specified product
+//  */
+// app.patch("/product/:id", (req, res) => {
+//   // We want to update the specified product (product document with id in the URL) with the new values specified in the JSON body of the request
+//   Product.findOneAndUpdate(
+//     { _id: req.params.id },
+//     {
+//       $set: req.body,
+//     }
+//   ).then(() => {
+//     res.send({ message: "updated successfully" });
+//   });
+// });
+// /**
+//  * DELETE /lists/:id
+//  * Purpose: Delete a list
+//  */
+// app.delete("/product/:id", (req, res) => {
+//   // We want to delete the specified product (document with id in the URL)
+//   Product.findOneAndRemove({
+//     _id: req.params.id,
+//   }).then((removedProductDoc) => {
+//     res.send(removedProductDoc);
+//   });
+// });
+
+// /*** CART ROUTES ***/
+// /**
+//  * GET /product
+//  * Purpose: get all products
+//  */
+//  app.get("/cart", (req, res) => {
+//     Product.find({}, (err, doc) => {
+//       if (!err) {
+//         res.send(doc);
+//       } else {
+//         res.send(err);
+//       }
+//     });
+//   });
+//   /**
+//    * POST /product
+//    * Purpose: add new product
+//    */
+//   app.post("/product", (req, res) => {
+//     // get data from request
+//     let product_name = req.body.name;
+//     let product_desc = req.body.description;
+//     let product_price = req.body.price;
+//     // set data to schema
+//     let newProduct = new Product({
+//       name: product_name,
+//       description: product_desc,
+//       price: product_price,
+//     });
+//     // save data to db
+//     newProduct.save((err, result) => {
+//       if (!err) {
+//         res.send(result);
+//       } else {
+//         res.send(err);
+//       }
+//     });
+//   });
+//   /**
+//    * PATCH /lists/:id
+//    * Purpose: Update a specified product
+//    */
+//   app.patch("/product/:id", (req, res) => {
+//     // We want to update the specified product (product document with id in the URL) with the new values specified in the JSON body of the request
+//     Product.findOneAndUpdate(
+//       { _id: req.params.id },
+//       {
+//         $set: req.body,
+//       }
+//     ).then(() => {
+//       res.send({ message: "updated successfully" });
+//     });
+//   });
+//   /**
+//    * DELETE /lists/:id
+//    * Purpose: Delete a list
+//    */
+//   app.delete("/product/:id", (req, res) => {
+//     // We want to delete the specified product (document with id in the URL)
+//     Product.findOneAndRemove({
+//       _id: req.params.id,
+//     }).then((removedProductDoc) => {
+//       res.send(removedProductDoc);
+//     });
+//   });

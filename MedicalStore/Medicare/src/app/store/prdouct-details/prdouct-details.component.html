@@ -1,0 +1,18 @@
+<div class="container p-3">
+    <div class="row my-4 mx-auto align-items-center">
+        <div class="col-6 p-0 m-0 "> 
+            <img class='mx-auto card-img-top' src="https://i.imgur.com/pjITBzX.jpg" width="auto" height="auto" />
+        </div> 
+        <div class="col-5">
+            <div class="card-body text-center align-items-center">
+                <h2 class="card-title font-weight-bold">{{product.name}}</h2>
+                <p class="card-text pt-1">{{product.description}}</p> 
+                <p class="card-text pt-2">{{product.price}}$</p> 
+                <div class="bg-transparent pt-4 mx-auto">
+                    <a (click)="addToCart('621f49c415aa2b1b3202114f',product._id)" class="btn btn-darken">ADD TO CART</a>&nbsp;&nbsp;
+                    <a (click)="addToWishlist('621f49c415aa2b1b3202114f',product._id)" class="pt-3 btn btn-transparent"><i class="fi fi-rr-heart" style="font-size:25px"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

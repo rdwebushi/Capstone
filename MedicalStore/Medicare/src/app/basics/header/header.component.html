@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark mb-4 bg_color">
+  <div class="container-fluid mx-3">
+    <a class="navbar-brand mx-5 my-auto" routerLink="/" [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active">
+      <img height="100px" src="../../../assets/logo1.png" />
+    </a>
+    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about-us" routerLinkActive="active">About Us</a>
+        </li>
+        <li class="mx-3">
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link" routerLink="/signin" routerLinkActive="active">
+            <i class="fi fi-rr-user" style="font-size:25px"></i>
+          </a>
+        </li> -->
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" routerLinkActive="active" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <!-- <i class="fi fi-rr-user" style="font-size:25px" ></i> -->
+            <span class="material-symbols-rounded" style="font-size:27px" >
+              account_circle
+              </span>
+          </a>
+          <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a *ngIf="!isLogedIn" class="dropdown-item" routerLink="/signin">Log in</a>
+            <a *ngIf="isLogedIn" class="dropdown-item" (click)="logout()">Log Out</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/wish-list" routerLinkActive="active">
+            <i class="fi fi-rr-heart" style="font-size:25px"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart" routerLinkActive="active">
+            <!-- <img class="svg" src = "assets/shopping-bag.svg"  width="20px"/> -->
+            <span class="material-symbols-rounded" style="font-size:27px">
+              shopping_bag
+              </span>
+            <!-- <i class="fi fi-rr-shopping-bag" style="font-size:25px"></i> -->
+            <!-- {{ $cart_total == 0 ? "Nada no carrinho!" : ("R$ " . number_format($cart_total, 2, ',', '.'))   }} -->
+          </a>
+        </li>
+
+
+      </ul>
+    </div>
+
+  </div>
+</nav>

@@ -1,0 +1,37 @@
+<div class="container p-3">
+    <div *ngIf="products.length!=0" class="card col-12 p-5 my-4 mx-4">
+        <!-- Wish List -->
+        <a *ngFor="let product of products" class="reset-a" routerLink="/cart" routerLinkActive="active">
+            <div class="row m-2 my-2 justify-content-center align-items-center">
+                <div class="col-2 p-0">
+                    <img class='mx-auto card-img-top' src="{{product.image}}" width="auto" height="auto" />
+                    <!-- <img class='mx-auto card-img-top' src="../../../assets/image-gallery.png" /> -->
+
+                </div>
+                <div class="col-4 align-items-center">
+                    <h2 class="font-weight-bold">{{product.name}}</h2>
+                    <p class="pt-1">{{product.price}}$</p>
+                </div>
+                <div class="col-4 align-items-center d-flex justify-content-end">
+                    <a (click)="deleteFromCart(userID, product._id )" class="pt-3 btn btn-transparent"><i class="fi fi-rr-trash" style="font-size:25px"></i></a>
+                </div>
+            </div>
+            <hr>
+        </a>
+        <!-- checkout button -->
+        <div class="row pt-5 d-flex flex-row-reverse">
+            <div class="col-2">
+                <a (click)="checkout(userID)" class="btn btn-darken">Checkout</a>
+            </div>
+            <!-- Empty Cart button -->
+            <div class="col-2 pr-0 mr-0">
+                <a (click)="deleteCart(userID)" class="btn btn-darken">Empty Cart</a>
+            </div>
+        </div>
+        <!-- Cart List -->
+    </div>
+    <!-- Empty Cart Statment -->
+    <div *ngIf="products.length==0" class="card col-12 p-5 my-4 mx-4">
+        There are no products in Your Cart yet, go to products page and look for Great Products
+    </div>
+</div>
